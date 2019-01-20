@@ -27,7 +27,7 @@ class ScrapeResult(models.Model):
     project = models.ForeignKey(
         Project, on_delete=models.SET_NULL, null=True, blank=True)
     success = models.BooleanField(default=False)
-    folder = models.CharField(max_length=255)
+    folder = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return '{} {}'.format(self.project.name, folder)
