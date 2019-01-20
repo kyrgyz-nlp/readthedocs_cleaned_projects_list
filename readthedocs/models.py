@@ -16,7 +16,7 @@ class Project(models.Model):
     canonical_url = models.CharField(max_length=255)
     actual_language = models.CharField(
         'detected language', max_length=255, blank=True, null=True)
+    license = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return self.name
-
