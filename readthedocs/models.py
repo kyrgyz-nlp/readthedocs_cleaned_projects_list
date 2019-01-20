@@ -20,3 +20,14 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ScrapeResult(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    project = models.ForeignKey(
+        Project, on_delete=models.SET_NULL, null=True, blank=True)
+    success = models.BooleanField(default=False)
+    folder = models.CharField(max_length=255)
+
+    def __str__(self):
+        return '{} {}'.format(self.project.name, folder)
