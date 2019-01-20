@@ -11,10 +11,10 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         url = 'https://webgrep.readthedocs.io/en/latest/'
         allowed_domains = ['readthedocs.io', 'github.com']
-        start_urls = [url]
+        projects = Project.objects.filter(documentation_type='mkdocs')
         process = CrawlerProcess()
         process.crawl(
             ReadthedocsSpider,
             allowed_domains=allowed_domains,
-            start_urls=start_urls)
+            projects=projects)
         process.start()
