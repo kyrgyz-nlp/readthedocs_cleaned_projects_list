@@ -7,5 +7,7 @@ How it works:
 
 `./manage.py getthedocs` -- writes all hosted projects info from `https://readthedocs.org/api/v2/project/` to database.
 
+`Note: scraped list of projects (12 months old) can be found in readthedocs_projects.json`
+
 
 `./manage.py scrapethedocs.py` -- crawls the saved projects pages
