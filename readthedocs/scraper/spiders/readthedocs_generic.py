@@ -17,12 +17,11 @@ class ReadthedocsSpider(scrapy.Spider):
         if not self.projects:
             raise CloseSpider('projects queryset should be passed')
         project = self.projects.filter(canonical_url=url).first()
+        i = {}
         try:
             print('SLUG HERE', project.slug)
-            i = {}
             i['url'] = url
             i['slug'] = slug
-            return i
         except:
             print('something went wrong')
-            return {}
+        return i
