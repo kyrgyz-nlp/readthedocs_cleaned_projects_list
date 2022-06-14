@@ -1,5 +1,5 @@
 import scrapy
-import scrapy.exceptions import CloseSpider
+from scrapy.exceptions import CloseSpider
 
 
 class ReadthedocsSpider(scrapy.Spider):
